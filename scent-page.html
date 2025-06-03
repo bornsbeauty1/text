@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>為你挑一款專屬香氣｜Borns 精油推薦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: "Helvetica Neue", sans-serif; background: #f9f9f9; color: #333; padding: 20px; max-width: 720px; margin: auto; }
+    h1, h2 { color: #4b4b4b; }
+    select, button { padding: 10px; margin: 10px 0; width: 100%; max-width: 100%; font-size: 16px; }
+    .result { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-top: 20px; }
+    .cta { margin-top: 40px; }
+    .cta a { display: block; background: #6c9e8b; color: white; text-align: center; padding: 12px; margin-top: 10px; border-radius: 6px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>為你挑一款專屬香氣</h1>
+  <h2>從香氣偏好、情緒需求與生活用途出發，找出最適合你的植萃精油</h2>
+  <p>在眾多香氣之間，該如何選出最適合自己的那一瓶？<br>
+  Borns 提供簡單明確的篩選建議，讓你依照「氣味調性」「使用情境」與「情緒需求」，探索更貼近心靈的香氛旅程。</p>
+
+  <label for="tone">❶ 選擇你偏好的氣味調性：</label>
+  <select id="tone">
+    <option value="">請選擇</option>
+    <option value="花香調">花香調</option>
+    <option value="木質調">木質調</option>
+    <option value="草本調">草本調</option>
+    <option value="柑橘果香">柑橘果香</option>
+    <option value="香脂溫潤">香脂溫潤</option>
+    <option value="清新薄荷感">清新薄荷感</option>
+  </select>
+
+  <label for="usage">❷ 精油想用在哪些情境？</label>
+  <select id="usage">
+    <option value="">請選擇</option>
+    <option value="放鬆睡前">放鬆睡前</option>
+    <option value="專注工作">專注工作</option>
+    <option value="提神醒腦">提神醒腦</option>
+    <option value="空氣淨化">空氣淨化</option>
+    <option value="情緒平衡">情緒平衡</option>
+    <option value="運動後舒緩">運動後舒緩</option>
+  </select>
+
+  <label for="emotion">❸ 想改善的情緒狀態？</label>
+  <select id="emotion">
+    <option value="">請選擇</option>
+    <option value="安撫焦慮">安撫焦慮</option>
+    <option value="提升正能量">提升正能量</option>
+    <option value="滋養自我價值感">滋養自我價值感</option>
+    <option value="增加安全感">增加安全感</option>
+    <option value="淨化與排毒">淨化與排毒</option>
+    <option value="提升戀愛磁場">提升戀愛磁場</option>
+  </select>
+
+  <button onclick="getResult()">找出我的香氣推薦</button>
+
+  <div id="result" class="result" style="display:none;"></div>
+
+  <div class="cta">
+    <a href="https://lin.ee/KbKkQxi" target="_blank">加入 LINE 官方帳號</a>
+    <a href="https://line.me/ti/g2/M0t27VwFgK" target="_blank">進入芳療社群交流</a>
+  </div>
+
+  <script>
+    function getResult() {
+      const tone = document.getElementById("tone").value;
+      const usage = document.getElementById("usage").value;
+      const emotion = document.getElementById("emotion").value;
+
+      let result = "";
+      if (!tone || !usage || !emotion) {
+        result = "<b>請選擇三個條件，才能推薦香氣喔！</b>";
+      } else {
+        result = "<b>推薦香氣：</b><br>";
+
+        if (tone === "花香調" && usage === "放鬆睡前" && emotion === "安撫焦慮") {
+          result += "🌸 羅馬洋甘菊精油：氣味淡雅、舒緩情緒，是睡前放鬆的首選。<br>";
+        } else if (tone === "木質調" && usage === "專注工作" && emotion === "提升正能量") {
+          result += "🌲 雪松精油：穩定心神、強化內在，適合提升專注力。<br>";
+        } else {
+          result += "🌿 薰衣草精油：經典萬用的舒緩系香氣，適合日常平衡情緒。<br>";
+        }
+      }
+
+      const div = document.getElementById("result");
+      div.style.display = "block";
+      div.innerHTML = result;
+    }
+  </script>
+</body>
+</html>
